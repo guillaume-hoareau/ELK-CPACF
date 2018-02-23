@@ -28,9 +28,12 @@ Use the icastats utility to find out whether libica uses hardware acceleration f
 
 First of all do check if libica is installed in your LinuxONE system. Issue the following command according to your linux distribution.
 
-RHEL - yum install libica libica-tools
-SUSE - yast install libica libica-tools
-UBUNTU - apt-get install libica libica-tools
+RHEL
+```yum install libica libica-tools```
+SUSE
+```yast install libica libica-tools```
+UBUNTU
+```apt-get install libica libica-tools```
 
 Then, please issue the following command in order to assess that your system is ready to be
 ```
@@ -80,13 +83,3 @@ Syntax highlighted code block
 
 [Link](url) and ![Image](src)
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/guikarai/ELK-CPACF/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
