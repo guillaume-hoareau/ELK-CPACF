@@ -1,8 +1,43 @@
-## Welcome to GitHub Pages
+# Hands-on LAB : ELK on LinuxONE for Monitoring Cryptographic Activities
+"ELK" is the acronym for three open source projects: Elasticsearch, Logstash, and Kibana. Elasticsearch is a search and analytics engine. Logstash is a server‑side data processing pipeline that ingests data from multiple sources simultaneously, transforms it, and then sends it to a "stash" like Elasticsearch. Kibana lets users visualize data with charts and graphs in Elasticsearch.
 
-You can use the [editor on GitHub](https://github.com/guikarai/ELK-CPACF/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+The Elastic Stack is the next evolution of ELK.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## ELK Setup
+An ELK stack can be implemented very easily, not matter the processor architecture.
+- If you want to monitor a LinuxONE Crypto activities with an ELK running on x86, please follow the following instructions: https://github.com/deviantony/docker-elk
+- If you want to monitor a LinuxONE Crypto activities with an ELK running also on LinuxONE, please follow the following instructions:
+- Building Elasticsearch on LinuxONE
+- Buidling Logstash on LinuxONE
+- Building Kibana on LinuxONE
+
+## LinuxONE Hardware Cryptographic APIs Enablement
+
+```
+icainfo
+```
+
+```
+icastats
+```
+
+```
+lszcrypt -VVVV
+```
+
+
+## LinuONE Agents to feed ELK
+ELK is about storing, and displaying as easy as possible data. To feed ELK with data we needs to use some agent in order to collect data from LinuxONE Crypto APIs first.
+```
+git clone https://github.com/guikarai/ELK-CPACF.git
+```
+
+```
+cd
+```
+
+
+## KIBANA Monitoring
 
 ### Markdown
 
