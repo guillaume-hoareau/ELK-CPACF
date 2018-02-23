@@ -5,14 +5,34 @@ The Elastic Stack is the next evolution of ELK.
 
 ## ELK Setup
 An ELK stack can be implemented very easily, not matter the processor architecture.
-- If you want to monitor a LinuxONE Crypto activities with an ELK running on x86, please follow the following instructions: https://github.com/deviantony/docker-elk
-- If you want to monitor a LinuxONE Crypto activities with an ELK running also on LinuxONE, please follow the following instructions:
-- Building Elasticsearch on LinuxONE
-- Buidling Logstash on LinuxONE
-- Building Kibana on LinuxONE
+
+If you want to monitor a LinuxONE Crypto activities with an ELK running on x86, please follow the following instructions:
+- Deploying a docker ELK on Linux: https://github.com/deviantony/docker-elk
+
+If you want to monitor a LinuxONE Crypto activities with an ELK running also on LinuxONE, please follow the following instructions:
+- Building Elasticsearch on LinuxONE : https://github.com/linux-on-ibm-z/docs/wiki/Building-Elasticsearch
+- Buidling Logstash on LinuxONE : https://github.com/linux-on-ibm-z/docs/wiki/Building-Logstash
+- Building Kibana on LinuxONE : https://github.com/linux-on-ibm-z/docs/wiki/Building-Kibana
 
 ## LinuxONE Hardware Cryptographic APIs Enablement
+The Library for IBM® Cryptographic Architecture (libica) is a library of cryptographic functions that are used to write cryptographic applications on Linux on Z and LinuxONE, both with and without cryptographic hardware.
+This information is intended for C programmers who want to access Linux on Z and LinuxONE hardware support for cryptographic methods. In particular, it addresses programmers who write hardware-specific plug-ins for cryptographic libraries such as openssl and openCryptoki.
 
+The libica packages include tools to investigate the capabilities of your cryptographic hardware and how these capabilities are used by applications that use libica.
+
+icainfo - Show available libica functions
+Use the icainfo command to find out which libica functions are available on your Linux system.
+
+icastats - Show use of libica functions
+Use the icastats utility to find out whether libica uses hardware acceleration features or works with software fallbacks. icastats collects the statistical data per user and not per system.
+
+First of all do check if libica is installed in your LinuxONE system. Issue the following command according to your linux distribution.
+
+RHEL - yum install libica libica-tools
+SUSE - yast install libica libica-tools
+UBUNTU - apt-get install libica libica-tools
+
+Then, please issue the following command in order to assess that your system is ready to be
 ```
 icainfo
 ```
