@@ -30,8 +30,10 @@ First of all do check if libica is installed in your LinuxONE system. Issue the 
 
 RHEL
 ```yum install libica libica-tools```
+
 SUSE
 ```yast install libica libica-tools```
+
 UBUNTU
 ```apt-get install libica libica-tools```
 
