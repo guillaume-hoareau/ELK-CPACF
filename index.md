@@ -51,7 +51,7 @@ lszcrypt -VVVV
 ```
 
 
-## LinuONE Agents to feed ELK
+## LinuxONE Agents to feed ELK
 ELK is about storing, and displaying as easy as possible data. To feed ELK with data we needs to use some agent in order to collect data from LinuxONE Crypto APIs first.
 ```
 git clone https://github.com/guikarai/ELK-CPACF.git
