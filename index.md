@@ -85,3 +85,8 @@ Syntax highlighted code block
 
 [Link](url) and ![Image](src)
 ```
+Installation into a docker container:
+docker exec -it <your container name> bash
+apt-get -qq update
+apt-get -qq -y install curl git libica openssl-ibmca openssl
+  
