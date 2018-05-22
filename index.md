@@ -18,7 +18,7 @@ The IBM Z and LinuxONE systems provide also rich cryptographic functions availab
 
 **Note:** Locate openSSL and dm-crypt. For the following, we will work on how set-up a Linux environment in order to benefit of Pervasive Encryption benefits.
   
-## Enabling Linux to use the Hardware
+## Part 1 - Enabling Linux to use the Hardware
 ### 1. CPACF Enablement verification
 A Linux on IBM Z user can easily check whether the Crypto Enablement feature is installed and which algorithms are supported in hardware. Hardware-acceleration for DES, TDES, AES, and GHASH requires CPACF. Issue the command shown below to discover whether the CPACF feature is enabled
 on your hardware.
@@ -542,10 +542,10 @@ data.512M                                                           100%  512MB 
 ```
 As you can see, with 256MB/s, we increased the throughput by 50%. So, beware default settings. Make sure to use hardware accelerated ciphers by IBM Z and LinuxONE.
 
-## Hands-on LAB : ELK on LinuxONE for Monitoring Cryptographic Activities
+## Part 2 - Starting an ELK on LinuxONE for Monitoring Cryptographic Activities
 "ELK" is the acronym for three open source projects: Elasticsearch, Logstash, and Kibana. Elasticsearch is a search and analytics engine. Logstash is a server‑side data processing pipeline that ingests data from multiple sources simultaneously, transforms it, and then sends it to a "stash" like Elasticsearch. Kibana lets users visualize data with charts and graphs in Elasticsearch. The Elastic Stack is the next evolution of ELK.
 
-The purpose of this hands-on lab is monitor crypto APIs of a LinuxONE instance thanks to ELK.
+This part to monitor crypto APIs of a LinuxONE instance thanks to ELK.
 
 ### ELK Setup
 An ELK stack can be implemented very easily, not matter the processor architecture.
@@ -557,6 +557,11 @@ If you want to monitor a LinuxONE Crypto activities with an ELK running also on 
 - Building Elasticsearch on LinuxONE : https://github.com/linux-on-ibm-z/docs/wiki/Building-Elasticsearch
 - Buidling Logstash on LinuxONE : https://github.com/linux-on-ibm-z/docs/wiki/Building-Logstash
 - Building Kibana on LinuxONE : https://github.com/linux-on-ibm-z/docs/wiki/Building-Kibana
+
+If you want to monitor a LinuxONE Crypto activities after deploying a docker ELK on Linux:LinuxONE, please follow the following instructions:
+sudo apt-get install docker git
+git clone 
+
 
 ### LinuxONE Hardware Cryptographic APIs Enablement
 The Library for IBM® Cryptographic Architecture (libica) is a library of cryptographic functions that are used to write cryptographic applications on Linux on Z and LinuxONE, both with and without cryptographic hardware.
