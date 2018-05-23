@@ -558,10 +558,31 @@ If you want to monitor a LinuxONE Crypto activities with an ELK running also on 
 - Buidling Logstash on LinuxONE : https://github.com/linux-on-ibm-z/docs/wiki/Building-Logstash
 - Building Kibana on LinuxONE : https://github.com/linux-on-ibm-z/docs/wiki/Building-Kibana
 
-If you want to monitor a LinuxONE Crypto activities after deploying a docker ELK on Linux:LinuxONE, please follow the following instructions:
-sudo apt-get install docker git
-git clone 
+(Recommanded) If you want to monitor a LinuxONE Crypto activities after deploying a docker ELK on Linux:LinuxONE, please follow the following instructions:
 
+Required tool:
+```
+sudo apt-get install docker git
+```
+
+Required dockerfile:
+```
+git clone https://github.com/guikarai/ELK-CPACF.git
+```
+
+Building a kibana docker image for s390 architecture:
+```
+cd dockerfile-examples/
+cd Kibana
+docker build -t "kibana:Dockerfile" .
+```
+
+Building an elasticsearch docker image for s390 architecture:
+```
+cd dockerfile-examples/
+cd Elasticsearch
+docker build -t "elasticsearch:Dockerfile" .
+```
 
 ### LinuxONE Hardware Cryptographic APIs Enablement
 The Library for IBM® Cryptographic Architecture (libica) is a library of cryptographic functions that are used to write cryptographic applications on Linux on Z and LinuxONE, both with and without cryptographic hardware.
