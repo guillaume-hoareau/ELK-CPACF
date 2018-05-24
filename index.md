@@ -1,3 +1,7 @@
+The following code pattern requires the following:
+* A LinuxONE Virtual Machine provisionned by the LinuxONE Community cloud
+* A Canonical Ubuntu 16.04.LTS Linux Virtual Machine
+
 # About Pervasive Encryption on LinuxONE
 Pervasive encryption is a data-centric approach to information security that entails protecting data entering and exiting the z14 platform. It involves encrypting data in-flight and at-rest to meet complex compliance mandates and reduce the risks and financial losses of a data breach. It is a paradigm shift from selective encryption (where only the data that is required to achieve compliance is encrypted) to pervasive encryption. Pervasive encryption with z14 is enabled through tight platform integration that includes Linux on IBM Z or LinuxONE following features:
 * Integrated cryptographic hardware: Central Processor Assist for Cryptographic Function (CPACF) is a co-processor on every processor unit that accelerates encryption. Crypto Express features can be used as hardware security modules (HSMs).
@@ -547,7 +551,7 @@ As you can see, with 256MB/s, we increased the throughput by 50%. So, beware def
 
 This part to monitor crypto APIs of a LinuxONE instance thanks to ELK.
 
-### ELK Setup
+### Seting-up an ELK infrastructure 
 An ELK stack can be implemented very easily, not matter the processor architecture.
 
 If you want to monitor a LinuxONE Crypto activities with an ELK running on x86, please follow the following instructions:
@@ -562,75 +566,125 @@ If you want to monitor a LinuxONE Crypto activities with an ELK running also on 
 
 Required tool:
 ```
-sudo apt-get install docker git
+root@crypt06:~# sudo apt-get install git docker docker-compose
 ```
 
 Required dockerfile:
 ```
-git clone https://github.com/guikarai/ELK-CPACF.git
+root@crypt06:~# git clone https://github.com/guikarai/ELK-CPACF.git
 ```
 
 Building a kibana docker image for s390 architecture:
 ```
-cd dockerfile-examples/
-cd Kibana
-docker build -t "kibana:Dockerfile" .
+root@crypt06:~# cd dockerfile-examples/
+root@crypt06:~# cd Kibana
+root@crypt06:~# sudo docker build -t "kibana:Dockerfile" .
 ```
 
 Building an elasticsearch docker image for s390 architecture:
 ```
-cd dockerfile-examples/
-cd Elasticsearch
-docker build -t "elasticsearch:Dockerfile" .
+root@crypt06:~# cd dockerfile-examples/
+root@crypt06:~# cd Elasticsearch
+root@crypt06:~# sudo docker build -t "elasticsearch:Dockerfile" .
 ```
 
-### LinuxONE Hardware Cryptographic APIs Enablement
-The Library for IBM® Cryptographic Architecture (libica) is a library of cryptographic functions that are used to write cryptographic applications on Linux on Z and LinuxONE, both with and without cryptographic hardware.
-This information is intended for C programmers who want to access Linux on Z and LinuxONE hardware support for cryptographic methods. In particular, it addresses programmers who write hardware-specific plug-ins for cryptographic libraries such as openssl and openCryptoki.
-
-The libica packages include tools to investigate the capabilities of your cryptographic hardware and how these capabilities are used by applications that use libica.
-
-icainfo - Show available libica functions
-Use the icainfo command to find out which libica functions are available on your Linux system.
-
-icastats - Show use of libica functions
-Use the icastats utility to find out whether libica uses hardware acceleration features or works with software fallbacks. icastats collects the statistical data per user and not per system.
-
-First of all do check if libica is installed in your LinuxONE system. Issue the following command according to your linux distribution.
-
-RHEL
-```yum install libica libica-tools```
-
-SUSE
-```yast install libica libica-tools```
-
-UBUNTU
-```apt-get install libica libica-tools```
-
-Then, please issue the following command in order to assess that your system is ready to be
+Starting up ELK:
 ```
-icainfo
+cd..
+sudo docker-compose up -d
 ```
 
+Please verify that the ELK Stack is properly started issuing the following command:
 ```
-icastats
-```
-
-```
-lszcrypt -VVVV
-```
-
-
-### LinuxONE Agents to feed ELK
-ELK is about storing, and displaying as easy as possible data. To feed ELK with data we needs to use some agent in order to collect data from LinuxONE Crypto APIs first.
-```
-git clone https://github.com/guikarai/ELK-CPACF.git
+root@crypt06:~# sudo docker ps -a
+CONTAINER ID        IMAGE                     COMMAND                  CREATED             STATUS              PORTS                                            NAMES
+fc2242672599        dockerelk_kibana          "/bin/bash /usr/lo..."   22 hours ago        Up 22 hours         0.0.0.0:5601->5601/tcp                           dockerelk_kibana_1
+8f87424acd61        dockerelk_elasticsearch   "/usr/local/bin/do..."   22 hours ago        Up 22 hours         0.0.0.0:9200->9200/tcp, 0.0.0.0:9300->9300/tcp   dockerelk_elasticsearch_1
 ```
 
+### Seting-up crypto data collection
+Please, correct the default ESserverIP adress with your @IP adress according to your environment.
+Let's start with the script in charge to collect data from the icastats command:
 ```
-cd
+root@crypt06:~# vi icastats.sh
+#!/bin/bash
+ESserverIP="18.197.196.0" <--- Change with your IP address here
 ```
 
-### KIBANA Monitoring
+So see with a user friendly interface the status of your elasticsearch instance, please, install in your computer the elasticsearch web-plugin named elasticsearch-head. FIll in the form and connect to your elasticsearch instance with the appropriate IP adress. The portname is by default 9200.
 
+
+It is now time to feed your elastic search with collected data and to create an index on elasticsearch database. Please issue the following command:
+```
+root@crypt06:~# sudo chmod +x icastats.sh
+root@crypt06:~# ./icastats.sh
+{"_index":"monitor-icastats","_type":"icastats","_id":"RD8FkmMBF84PFKnZKoVW","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}
+{"_index":"monitor-icastats","_type":"icastats","_id":"RD8FkmMBF84PFKnZKoVW","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}
+...
+```
+
+Ervery 5 seconds, a record will be sent to the elasticsearch db. To assess that with web interface, there are new records added in the elasticsearch db.
+
+
+### Creating a crypto dashboard
+#### Creating your first index
+
+Connect to the URL of your kibana instance.
+http://<YourIpAdress>:5601
   
+Click on the left tab bar to "Management"
+Capture d’écran 2018-05-24 à 11.44.34 (2)
+
+Click on Index pattern area, and fill the tab with minotor* as follow. Then click to Next Step.
+Capture d’écran 2018-05-24 à 11.44.34 (2)
+
+In configure settings panel, please select @Timestamp and validate by clicking on Create index pattern.
+
+You can check that everything is OK. The structure of the index monitor* is displayed front of you.
+
+#### Creating your first search
+Click on the left tab bar to "Discover". 
+Capture d’écran 2018-05-24 à 11.47.27 (2)
+
+Let's start to discover and to explor data sent by LinuxONE virtual machine. Click on Available field MODE as follow:
+Capture d’écran 2018-05-24 à 11.47.40 (2)
+
+Click on "add" field MODE as follow:
+Capture d’écran 2018-05-24 à 11.47.49 (2)
+
+Now on the top right bar, click on Save as follow:
+
+Save as icastats your first elasticsearch result. This will be used as dashboard basements to build visualization later.
+
+
+#### Creating your first visualization
+
+Capture d’écran 2018-05-24 à 11.48.37 (2)
+
+Capture d’écran 2018-05-24 à 11.48.41 (2)
+
+Capture d’écran 2018-05-24 à 11.48.53 (2)
+
+Capture d’écran 2018-05-24 à 11.49.17 (2)
+
+Capture d’écran 2018-05-24 à 11.49.29 (2)
+
+Repeat the creation of visualization with DES, TDES, SHA-1 and DRBG-SHA-512. Your visualization collection should look like the following:
+Capture d’écran 2018-05-24 à 11.51.53 (2)
+
+
+
+#### Creating your first dashboard
+
+Capture d’écran 2018-05-24 à 11.52.10 (2)
+
+Capture d’écran 2018-05-24 à 11.52.15 (2)
+
+Capture d’écran 2018-05-24 à 11.52.32 (2)
+
+Capture d’écran 2018-05-24 à 11.52.55 (2)
+
+
+
+
+
