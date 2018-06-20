@@ -1,20 +1,22 @@
-### Creating a crypto dashboard
-#### Creating your first index
+# Building a crypto dashboard
+## Creating your first index
 
-Connect to the URL of your kibana instance.
-http://<YourIpAdress>:5601
+### 1. Connect to the URL of your kibana instance.
+Note that your IP address is different, and adapt accordingly.
+http://18.197.196.0:5601
   
-Click on the left tab bar to "Management"
+### 2. Click on the left tab bar to "Management"
 Capture d’écran 2018-05-24 à 11.44.34 (2)
 
-Click on Index pattern area, and fill the tab with minotor* as follow. Then click to Next Step.
+### 3. Click on Index pattern area, and fill the tab with minotor* as follow. Then click to Next Step.
 Capture d’écran 2018-05-24 à 11.44.34 (2)
 
-In configure settings panel, please select @Timestamp and validate by clicking on Create index pattern.
+### 4. In configure settings panel, please select @Timestamp and validate by clicking on Create index pattern.
 
-You can check that everything is OK. The structure of the index monitor* is displayed front of you.
+### 5. You can check that everything is OK. The structure of the index monitor* is displayed front of you.
 
-#### Creating your first search
+
+### Creating your first search
 Click on the left tab bar to "Discover". 
 Capture d’écran 2018-05-24 à 11.47.27 (2)
 
