@@ -56,10 +56,20 @@ To build a visualization from a saved search, click the name of the saved search
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.48.53%20(2).png)
 
 ### 5. Vizualization builder
-In the visualization builder, choose the metric aggregation for the visualization’s Y axis: average
+In the visualization builder, choose the metric aggregation for the visualization’s Y axis: Average
+In the visualization builder, choose the metric field for the visualization’s Y axis: AES CBC
+For the visualizations X axis, select a bucket aggregation: Date Histogram
+For the visualizations X axis, select a bucket field: @Timestamp
+For the visualizations X axis, select a bucket interval: Auto
+
+Now click on play button as follow:
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.49.17%20(2).png)
 
-For the visualizations X axis, select a bucket aggregation:
+You should be able to visualize incoming crypto metrics with a bar chart.
+
+### 6. Now on the top right bar, click on Save.
+
+### 7. Save as "AES" your first vizualization chart.
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.47.40%20(2).png)
 
 Repeat the creation of visualization with DES, TDES, SHA-1 and DRBG-SHA-512. Your visualization collection should look like the following:
