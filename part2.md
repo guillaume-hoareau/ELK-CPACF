@@ -35,22 +35,22 @@ If you want to monitor a LinuxONE Crypto activities with an ELK running also on 
 
 Required tool:
 ```
-root@crypt06:~# sudo apt-get install git docker docker-compose
+sudo apt-get install git docker docker-compose
 ```
 
 Required dockerfile:
 ```
-root@crypt06:~# git clone https://github.com/guikarai/ELK-CPACF.git
+sudo git clone https://github.com/guikarai/ELK-CPACF.git
 ```
 
 Building a kibana docker image for s390 architecture:
 ```
-root@crypt06:~# sudo docker build -t "kibana:Dockerfile" .
+sudo docker build -t "kibana:Dockerfile" .
 ```
 
 Building an elasticsearch docker image for s390 architecture:
 ```
-root@crypt06:~# sudo docker build -t "elasticsearch:Dockerfile" .
+sudo docker build -t "elasticsearch:Dockerfile" .
 ```
 
 Starting up ELK:
@@ -70,7 +70,7 @@ fc2242672599        dockerelk_kibana          "/bin/bash /usr/lo..."   22 hours 
 Please, correct the default ESserverIP adress with your @IP adress according to your environment.
 Let's start with the script in charge to collect data from the icastats command:
 ```
-root@crypt06:~# vi icastats.sh
+sudo vi icastats.sh
 #!/bin/bash
 ESserverIP="18.197.196.0" <--- Change with your IP address here
 ```
@@ -79,14 +79,15 @@ So see with a user friendly interface the status of your elasticsearch instance,
 
 It is now time to feed your elastic search with collected data and to create an index on elasticsearch database. Please issue the following command:
 ```
-root@crypt06:~# sudo chmod +x icastats.sh
-root@crypt06:~# ./icastats.sh
+sudo chmod +x icastats.sh
+sudo ./icastats.sh
 {"_index":"monitor-icastats","_type":"icastats","_id":"RD8FkmMBF84PFKnZKoVW","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}
 {"_index":"monitor-icastats","_type":"icastats","_id":"RD8FkmMBF84PFKnZKoVW","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}
-...
+[...truncated...]
 ```
 
-Ervery 5 seconds, a record will be sent to the elasticsearch db. To assess that with web interface, there are new records added in the elasticsearch db.
+Ervery 5 seconds, a record will be sent to the elasticsearch db. To assess that with web interface, there are new records added in the elasticsearch db. 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 You are now good for the part III about creating a dashboard to magnified live captured crypto information.
 
