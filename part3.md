@@ -27,19 +27,19 @@ The structure of the index monitor* is displayed front of you:
 ### 1. Click on the left tab bar to "Discover". 
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99e%CC%81cran%202018-06-20%20a%CC%80%2017.07.05%20(2).png)
 
-### 2. Let's start to discover and to explor data sent by LinuxONE virtual machine. 
+### 2. Let's start to discover and to explore crypto data sent by LinuxONE virtual machine. 
 Click on Available field MODE as follow:
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.46.45%20(2).png)
 Capture d’écran 2018-05-24 à 11.47.40 (2)
 
 ### 3. Click on "add" field MODE as follow:
-![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.46.45%20(2).png)
-Capture d’écran 2018-05-24 à 11.47.49 (2)
+![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.47.22%20(2).png)
 
 ### 4. Now on the top right bar, click on Save as follow:
+![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.47.27%20(2).png)
 
 ### 5. Save as icastats your first elasticsearch result. This will be used as dashboard basements to build visualization later.
-
+![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.47.40%20(2).png)
 
 ## Creating your first visualization
 
