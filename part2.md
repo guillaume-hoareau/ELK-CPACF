@@ -45,21 +45,16 @@ root@crypt06:~# git clone https://github.com/guikarai/ELK-CPACF.git
 
 Building a kibana docker image for s390 architecture:
 ```
-root@crypt06:~# cd dockerfile-examples/
-root@crypt06:~# cd Kibana
 root@crypt06:~# sudo docker build -t "kibana:Dockerfile" .
 ```
 
 Building an elasticsearch docker image for s390 architecture:
 ```
-root@crypt06:~# cd dockerfile-examples/
-root@crypt06:~# cd Elasticsearch
 root@crypt06:~# sudo docker build -t "elasticsearch:Dockerfile" .
 ```
 
 Starting up ELK:
 ```
-cd..
 sudo docker-compose up -d
 ```
 
