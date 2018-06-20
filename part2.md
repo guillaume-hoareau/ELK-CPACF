@@ -95,6 +95,4 @@ To assess that it works properly, with web interface there are new records added
 Your elasticsearh web interface should look like the foolowing:
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2014.03.51%20(2).png)
 
-
 You are now good for the part III about creating a dashboard to magnified live captured crypto information.
-
