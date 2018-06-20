@@ -38,20 +38,29 @@ Capture d’écran 2018-05-24 à 11.47.40 (2)
 ### 4. Now on the top right bar, click on Save as follow:
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.47.27%20(2).png)
 
-### 5. Save as icastats your first elasticsearch result. This will be used as dashboard basements to build visualization later.
+### 5. Save as "icastats" your first elasticsearch result. This will be used as dashboard basements to build visualization later.
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.47.40%20(2).png)
 
 ## Creating your first visualization
+### 1. Click on Visualize in the side navigation.
+![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.47.40%20(2).png)
 
-Capture d’écran 2018-05-24 à 11.48.37 (2)
+### 2. Click the Create new visualization button or the + button.
+![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.47.40%20(2).png)
 
-Capture d’écran 2018-05-24 à 11.48.41 (2)
+### 3. Choose the visualization type: Vertical Bar
+![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.48.41%20(2).png)
 
-Capture d’écran 2018-05-24 à 11.48.53 (2)
+### 4. Specify a search query to retrieve the data for your visualization.
+To build a visualization from a saved search, click the name of the saved search you previously saved (icastats). This opens the visualization builder and loads the selected query. When you build a visualization from a saved search, any subsequent modifications to the saved search are automatically reflected in the visualization. To disable automatic updates, you can disconnect a visualization from the saved search.
+![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.48.53%20(2).png)
 
-Capture d’écran 2018-05-24 à 11.49.17 (2)
+### 5. Vizualization builder
+In the visualization builder, choose the metric aggregation for the visualization’s Y axis: average
+![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.49.17%20(2).png)
 
-Capture d’écran 2018-05-24 à 11.49.29 (2)
+For the visualizations X axis, select a bucket aggregation:
+![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.47.40%20(2).png)
 
 Repeat the creation of visualization with DES, TDES, SHA-1 and DRBG-SHA-512. Your visualization collection should look like the following:
 Capture d’écran 2018-05-24 à 11.51.53 (2)
