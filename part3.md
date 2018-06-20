@@ -4,12 +4,15 @@
 ### 1. Connect to the URL of your kibana instance.
 Note that your IP address is different, and adapt accordingly.
 http://18.197.196.0:5601
+
+The kibana web interface should look like as follow:
+![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99e%CC%81cran%202018-06-20%20a%CC%80%2016.58.10%20(2).png)
   
 ### 2. Click on the left tab bar to "Management"
-Capture d’écran 2018-05-24 à 11.44.34 (2)
 
-### 3. Click on Index pattern area, and fill the tab with minotor* as follow. Then click to Next Step.
-Capture d’écran 2018-05-24 à 11.44.34 (2)
+
+### 3. Click on Index pattern area, and fill the tab with monitor* as follow. Then click to Next Step.
+![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.44.34%20(2).png)
 
 ### 4. In configure settings panel, please select @Timestamp and validate by clicking on Create index pattern.
 
