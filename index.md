@@ -1,4 +1,4 @@
-The following code pattern requires the following:
+The following code pattern requires the following infrastructure:
 * A LinuxONE Virtual Machine provisionned by the LinuxONE Community cloud
 * A Canonical Ubuntu 16.04.LTS Linux Virtual Machine
 
