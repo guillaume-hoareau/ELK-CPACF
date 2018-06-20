@@ -87,7 +87,7 @@ sudo ./icastats.sh
 ```
 
 Ervery 5 seconds, a record will be sent to the elasticsearch db. To assess that with web interface, there are new records added in the elasticsearch db. 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 You are now good for the part III about creating a dashboard to magnified live captured crypto information.
 
