@@ -1,4 +1,4 @@
-# Building a crypto dashboard
+# Part III. Building a crypto dashboard
 ## Creating your first index
 
 ### 1. Connect to the URL of your kibana instance.
