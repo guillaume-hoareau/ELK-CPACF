@@ -1,5 +1,7 @@
 # Part II - Starting an ELK on LinuxONE for Monitoring Cryptographic Activities
 
+This this part, you will learn how to monitor the APIs of a LinuxONE and to send captured information to a no-slq database.
+
 ## What the ELK..?!
 Elasticsearch is a search engine based on Lucene. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. Elasticsearch is developed in Java and is released as open source under the terms of the Apache License. Official clients are available in Java, .NET (C#), PHP, Python, Apache Groovy, Ruby and many other languages. According to the DB-Engines ranking, Elasticsearch is the most popular enterprise search engine followed by Apache Solr, also based on Lucene.
 
@@ -9,10 +11,14 @@ Elasticsearch can be used to search all kinds of documents. It provides scalable
 
 More information about ELK here: https://www.elastic.co
 
-## What you have to keep in mind about ELK
-"ELK" is the acronym for three open source projects: Elasticsearch, Logstash, and Kibana. Elasticsearch is a search and analytics engine. Logstash is a server‑side data processing pipeline that ingests data from multiple sources simultaneously, transforms it, and then sends it to a "stash" like Elasticsearch. Kibana lets users visualize data with charts and graphs in Elasticsearch. The Elastic Stack is the next evolution of ELK.
+## What to Keep in mind about ELK?
+"ELK" is the acronym for three open source projects: Elasticsearch, Logstash, and Kibana. Elasticsearch is a search and analytics engine. 
 
-This part to monitor crypto APIs of a LinuxONE instance thanks to ELK.
+Logstash is a server‑side data processing pipeline that ingests data from multiple sources simultaneously, transforms it, and then sends it to a "stash" like Elasticsearch. 
+
+Kibana lets users visualize data with charts and graphs in Elasticsearch. The Elastic Stack is the next evolution of ELK.
+
+
 
 ## 1. Seting-up an ELK infrastructure 
 An ELK stack can be implemented very easily, not matter the processor architecture.
@@ -88,5 +94,5 @@ root@crypt06:~# ./icastats.sh
 
 Ervery 5 seconds, a record will be sent to the elasticsearch db. To assess that with web interface, there are new records added in the elasticsearch db.
 
-You are now good for the part 3.
+You are now good for the part 3 about creating a dashboard to magnified live captured crypto information.
 
