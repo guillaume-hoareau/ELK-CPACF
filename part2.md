@@ -1,9 +1,9 @@
-## Part 2 - Starting an ELK on LinuxONE for Monitoring Cryptographic Activities
+# Part II - Starting an ELK on LinuxONE for Monitoring Cryptographic Activities
 "ELK" is the acronym for three open source projects: Elasticsearch, Logstash, and Kibana. Elasticsearch is a search and analytics engine. Logstash is a server‑side data processing pipeline that ingests data from multiple sources simultaneously, transforms it, and then sends it to a "stash" like Elasticsearch. Kibana lets users visualize data with charts and graphs in Elasticsearch. The Elastic Stack is the next evolution of ELK.
 
 This part to monitor crypto APIs of a LinuxONE instance thanks to ELK.
 
-### Seting-up an ELK infrastructure 
+## 1. Seting-up an ELK infrastructure 
 An ELK stack can be implemented very easily, not matter the processor architecture.
 
 If you want to monitor a LinuxONE Crypto activities with an ELK running on x86, please follow the following instructions:
@@ -54,7 +54,7 @@ fc2242672599        dockerelk_kibana          "/bin/bash /usr/lo..."   22 hours 
 8f87424acd61        dockerelk_elasticsearch   "/usr/local/bin/do..."   22 hours ago        Up 22 hours         0.0.0.0:9200->9200/tcp, 0.0.0.0:9300->9300/tcp   dockerelk_elasticsearch_1
 ```
 
-### Seting-up crypto data collection
+## 2. Seting-up crypto data collection
 Please, correct the default ESserverIP adress with your @IP adress according to your environment.
 Let's start with the script in charge to collect data from the icastats command:
 ```
