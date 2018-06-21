@@ -6,27 +6,27 @@ Kibana is a window into the Elastic Stack. It enables visual exploration and rea
 
 ## Creating your first index
 
-### 1. Connect to the URL of your kibana instance.
+### 1. Connecting to the URL of your kibana instance.
 Note that your IP adress is different, you must adapt the following accordingly.
 http://18.197.196.0:5601
 
 The kibana web interface should look like as follow:
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99e%CC%81cran%202018-06-20%20a%CC%80%2016.58.10%20(2).png)
   
-### 2. Click on the left tab bar to "Management"
+### 2. Define an index pattern
+Click on the left tab bar to "Management".
 
-
-#### 3. Main Management / Kibana Panel
+#### 3. Define an index pattern named "monitor*"
 Click on Index pattern area, and fill the tab with monitor* as follow. 
 Then click to Next Step.
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.44.34%20(2).png)
 
-#### Configure four first index pattern
+#### Save your defined an index pattern
 In configure settings panel, please select @Timestamp.
 Then validate by clicking on Create index pattern.
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.46.34%20(2).png)
 
-#### A new index pattern is born 
+#### Check your new defined pattern
 The structure of the index monitor* is displayed front of you:
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.46.45%20(2).png)
 
