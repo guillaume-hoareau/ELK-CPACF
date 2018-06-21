@@ -6,14 +6,14 @@ Kibana is a window into the Elastic Stack. It enables visual exploration and rea
 
 ## Creating your first index
 
-### 1. Connecting to the URL of your kibana instance.
+#### 1. Connecting to the URL of your kibana instance.
 Note that your IP adress is different, you must adapt the following accordingly.
 http://18.197.196.0:5601
 
 The kibana web interface should look like as follow:
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99e%CC%81cran%202018-06-20%20a%CC%80%2016.58.10%20(2).png)
   
-### 2. Define an index pattern
+#### 2. Define an index pattern
 Click on the left tab bar to "Management".
 
 #### 3. Define an index pattern named "monitor*"
