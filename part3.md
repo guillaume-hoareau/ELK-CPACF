@@ -7,7 +7,7 @@ Kibana is a window into the Elastic Stack. It enables visual exploration and rea
 ## Creating your first index
 
 ### 1. Connect to the URL of your kibana instance.
-Note that your IP address is different, and adapt accordingly.
+Note that your IP adress is different, you must adapt the following accordingly.
 http://18.197.196.0:5601
 
 The kibana web interface should look like as follow:
