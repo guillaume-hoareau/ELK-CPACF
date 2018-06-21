@@ -1,4 +1,9 @@
-# Part III. Building a crypto dashboard
+# Part III. Building a crypto dashboard with Kibana
+
+In this part, you will create your first crypto dashboard with Kibana. 
+
+Kibana is a window into the Elastic Stack. It enables visual exploration and real-time analysis of your data in Elasticsearch. This video is perfect for users that are new to Kibana and are looking for a primer on data exploration, visualization, and dashboarding. Watch Alex Francoeur give a demo of going from a Kibana installation to a full dashboard in matter of minutes. 
+
 ## Creating your first index
 
 ### 1. Connect to the URL of your kibana instance.
@@ -24,13 +29,18 @@ The structure of the index monitor* is displayed front of you:
 
 ## Creating your first search
 
+You can interactively explore your data from the Discover page. You have access to every document in every index that matches the selected index pattern. You can submit search queries, filter the search results, and view document data. You can also see the number of documents that match the search query and get field value statistics. If a time field is configured for the selected index pattern, the distribution of documents over time is displayed in a histogram at the top of the page.
+
 ### 1. Click on the left tab bar to "Discover". 
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99e%CC%81cran%202018-06-20%20a%CC%80%2017.07.05%20(2).png)
 
-### 2. Let's start to discover and to explore crypto data sent by LinuxONE virtual machine. 
+### 2. Let's start to discover and to explore crypto data sent by LinuxONE virtual machine.
+When you submit a search request, the histogram, Documents table, and Fields list are updated to reflect the search results. The total number of hits (matching documents) is shown in the toolbar. The Documents table shows the first five hundred hits. 
+
+By default, the hits are listed in reverse chronological order, with the newest documents shown first. You can reverse the sort order by clicking the Time column header. You can also sort the table by the values in any indexed field.
+
 Click on Available field MODE as follow:
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.46.45%20(2).png)
-Capture d’écran 2018-05-24 à 11.47.40 (2)
 
 ### 3. Click on "add" field MODE as follow:
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.47.22%20(2).png)
@@ -38,10 +48,13 @@ Capture d’écran 2018-05-24 à 11.47.40 (2)
 ### 4. Now on the top right bar, click on Save as follow:
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.47.27%20(2).png)
 
-### 5. Save as "icastats" your first elasticsearch result. This will be used as dashboard basements to build visualization later.
+### 5. Save your first search as "icastats". 
+This will be used as dashboard basements to build visualization later.
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.47.40%20(2).png)
 
 ## Creating your first visualization
+A Kibana dashboard displays a collection of visualizations and searches. You can arrange, resize, and edit the dashboard content and then save the dashboard so you can share it.
+
 ### 1. Click on Visualize in the side navigation.
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.47.40%20(2).png)
 
