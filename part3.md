@@ -16,7 +16,8 @@ The kibana web interface should look like as follow:
 ### 2. Click on the left tab bar to "Management"
 
 
-### 3. Click on Index pattern area, and fill the tab with monitor* as follow. Then click to Next Step.
+### 3. Management / Kibana Panel
+Click on Index pattern area, and fill the tab with monitor* as follow. Then click to Next Step.
 ![alt text](https://github.com/guikarai/ELK-CPACF/blob/master/images/Capture%20d%E2%80%99%C3%A9cran%202018-05-24%20%C3%A0%2011.44.34%20(2).png)
 
 ### 4. Configure Setting Panel
