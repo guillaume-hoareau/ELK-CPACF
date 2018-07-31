@@ -1,6 +1,6 @@
 # Part II - Starting an ELK on LinuxONE for Monitoring Cryptographic Activities
 
-In this part, you will learn how to monitor the APIs of a LinuxONE guest and to send crypto captured information to a no-slq database.
+In this part, you will learn how to monitor captured LinuxONE crypto activity thanks to APIs. You will send these captured information to a no-slq database (Elasticsearch Database).
 
 ## What the ELK..?!
 Elasticsearch is a search engine based on Lucene. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents. Elasticsearch is developed in Java and is released as open source under the terms of the Apache License. Official clients are available in Java, .NET (C#), PHP, Python, Apache Groovy, Ruby and many other languages. According to the DB-Engines ranking, Elasticsearch is the most popular enterprise search engine followed by Apache Solr, also based on Lucene.
